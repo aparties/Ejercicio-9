@@ -21,15 +21,15 @@ exports.index = function(req, res){
 
 
 //GET /quizes/:id
-exports.show = function(req, res){
-		res.render('quizes/show', {quiz: quiz});
+exports.show = function(req, res) {
+		res.render('quizes/show', { quiz: req.quiz});
 };
 
 //GET /quizes/:id/answer
-exports.answer = function(req, res){
+exports.answer = function(req, res) {
 	var resultado = 'Incorrecto';
-		if(req.query.respuesta === req.quiz.respuesta){
-		 resultado ='Correcto';
+		if(req.query.respuesta === req.quiz.respuesta) {
+		 resultado = 'Correcto';
 		}
-		res.render('quizes/answer', {quiz: req.quiz, respuesta: resultado});
+		res.render('quizes/answer', { quiz: req.quiz, respuesta: resultado});
 };
