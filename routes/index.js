@@ -17,9 +17,8 @@ router.get('/quizes/:quizId(\\d+)/answer', 	quizController.answer);
 router.get('/quizes/new', 			quizController.new);
 router.post('/quizes/create', 			quizController.create);
 router.get('/quizes/:quizId(\\d+)/edit', 	quizController.edit);
-router.delete('/quizes/:quizId(\\d+)/', 	quizController.destroy);
-
-
+router.put('/quizes/:quizId(\\d+)', 		quizController.update);
+router.delete('/quizes/:quizId(\\d+)', 		quizController.destroy);
 router.get('/credits/author', 			creditsController.author);
 
-module.exports = router;router.put('/quizes/:quizId(\\d+)/', 		quizController.update);
+module.exports = router;

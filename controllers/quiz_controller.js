@@ -19,13 +19,13 @@ exports.edit = function(req, res) {
 
 //PUT /quizes/ :id
 exports.update = function(req, res){
-	req.quiz.pregunta = req.body.quiz.pregunta;
-	req.quiz.respuesta = req.body.quiz.respuesta;
+	req.quiz.pregunta 	= req.body.quiz.pregunta;
+	req.quiz.respuesta 	= req.body.quiz.respuesta;
 	
 req.quiz
 .validate()
 .then(function(err){
-	if(err){
+	if(err) {
 	res.render('quizes/edit', {quiz: req.quiz, errors: err.erros});
 	} else {
 	req.quiz

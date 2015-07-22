@@ -36,6 +36,13 @@ req.quiz
   );
 };
 
+//DELETE /quizes/: id
+exports.destroy = function(req, res) {
+	req.quiz.destroy().then( function() {
+	res.redirect('/quizes');
+	}).catch(function(error){next(error)});	
+};
+
 //Get /quizes/new
 exports.new = function(req, res) {
 	var quiz = models.Quiz.build(// crea objeto quiz
