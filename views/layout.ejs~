@@ -16,6 +16,12 @@
   <body>
   <div id="page-wrap">
     <header class="main" id="h1">
+	<%if(!session.user){%>
+	<span class="right"><a href="/login">Login</a></span>
+	<%}else{%>
+	<span class="right"> <%=session.user.username%> <a href="/logout">Logout</a></span>
+	<%}%>
+
       <h2> Quiz<span>: El juego de las preguntas.</span></h2>
     </header>
 
@@ -42,7 +48,7 @@
 
     <footer class="main" id="f1">
      <p><a href="http://es.wikipedia.org/wiki/Quiz">¿Que es un Quiz?</a></p>
-    <p>C&oacute;digo fuente disponible en <a href="https://github.com/aparties/Ejercicio-6">Github</a></p>
+    <p>C&oacute;digo fuente disponible en <a href="https://github.com/aparties/Ejercicio-8">Github</a></p>
     </footer>
 
   </div>
