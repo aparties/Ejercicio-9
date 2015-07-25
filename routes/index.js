@@ -6,6 +6,8 @@ var sessionController 	= 	require('../controllers/session_controller');
 
 var creditsController 	= 	require('../controllers/credits_controller');
 
+
+
 // GET home page. 
 router.get('/', function(req, res) {
   res.render('index', { title: 'Quiz', errors: []});
@@ -32,9 +34,10 @@ router.delete('/quizes/:quizId(\\d+)', 		sessionController.loginRequired, quizCo
 
 router.get('/quizes/:quizId(\\d+)/comments/new', commentController.new);
 router.post('/quizes/:quizId(\\d+)/comments', 	 commentController.create);
-router.get('/quizes/:quizId(\\d+)/comments/:commentId(\\d+)/publish', 
-					sessionController.loginRequired, commentController.publish);
+router.get('/quizes/:quizId(\\d+)/comments/:commentId(\\d+)/publish', sessionController.loginRequired, commentController.publish);
 
 router.get('/credits/author', 			creditsController.author);
+
+
 
 module.exports = router;
